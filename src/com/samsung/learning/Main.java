@@ -9,8 +9,11 @@ public class Main {
         Scanner scanner = new Scanner (System.in);
         scanner.useLocale(Locale.US);
 
-        int a = scanner.nextInt(), b = scanner.nextInt(), c = scanner.nextInt();
-        System.out.println((a % 2 == 0 ? 1 : 0) + (b % 2 == 0 ? 1 : 0) + (c % 2 == 0 ? 1 : 0) >= 2);
+        double x = scanner.nextDouble(), y = scanner.nextDouble();
+
+        boolean a = (x * x + y * y <= 1) || (y <= 1 && y >= 0 && x <= 1 && x >= 0);
+
+        System.out.println(a ? "YES" : "NO");
     }
 
 }
