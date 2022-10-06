@@ -9,8 +9,8 @@ public class Main {
         Scanner scanner = new Scanner (System.in);
         scanner.useLocale(Locale.US);
 
-        int x = scanner.nextInt();
-        System.out.println(x >= 100 && x <= 999 & x % 5 == 0);
+        int a = scanner.nextInt(), b = scanner.nextInt(), c = scanner.nextInt(), d = scanner.nextInt();
+        System.out.println(a == -b || a == -c || a == -d || b == -c || b == -d || c == -d);
     }
 
 }
