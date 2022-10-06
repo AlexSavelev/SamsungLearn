@@ -10,7 +10,7 @@ public class Main {
         scanner.useLocale(Locale.US);
 
         double x = scanner.nextDouble();
-        System.out.println((x >= -3 && x <= 5) || (x >= 9 && x <= 15));
+        System.out.println(!((x >= -2 && x <= 3) || (x >= 6 && x <= 9)));
     }
 
 }
