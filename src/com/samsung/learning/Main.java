@@ -9,8 +9,8 @@ public class Main {
         Scanner scanner = new Scanner (System.in);
         scanner.useLocale(Locale.US);
 
-        double x = scanner.nextDouble();
-        System.out.println(!((x >= -2 && x <= 3) || (x >= 6 && x <= 9)));
+        int x = scanner.nextInt();
+        System.out.println(x >= 100 && x <= 999 & x % 5 == 0);
     }
 
 }
