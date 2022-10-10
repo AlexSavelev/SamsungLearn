@@ -7,23 +7,16 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner (System.in);
 
-        int a = scanner.nextInt(), b = scanner.nextInt(), c = scanner.nextInt();
+        int a = scanner.nextInt();
 
-        if(a > b) {
-            if(a > c) {
-                System.out.println(a);
-            } else {
-                System.out.println(c);
-            }
+        if(a / 10 == 0 && a >= 0) {
+            System.out.println("DIGIT");
+        } else if(a / 100 == 0 && a > 0) {
+            System.out.println("NUM");
         } else {
-            if(b > c) {
-                System.out.println(b);
-            } else {
-                System.out.println(c);
-            }
+            System.out.println("OTHER");
         }
 
-        System.out.println("Hello wortld!jfheuiog");
     }
 
 }
