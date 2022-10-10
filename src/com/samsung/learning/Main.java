@@ -13,7 +13,7 @@ public class Main {
         if(a == 0) {
             System.out.println(0 > b ? "any x" : "no such x");
         } else {
-            double p = (double)(b) / a;
+            double p = Math.round((double)(b) / a * 10.0) / 10.0;
             if(a > 0) {
                 // |x| > p
                 if(p < 0) {
