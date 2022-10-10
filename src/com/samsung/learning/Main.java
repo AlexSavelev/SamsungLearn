@@ -7,25 +7,17 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner (System.in);
 
-        int a = scanner.nextInt(), b = scanner.nextInt(), c = scanner.nextInt();
+        int a = scanner.nextInt();
 
-        if(a > b) {
-            int t = a;
-            a = b;
-            b = t;
-        }
-        if(a > c) {
-            int t = a;
-            a = c;
-            c = t;
-        }
-        if(b > c) {
-            int t = b;
-            b = c;
-            c = t;
-        }
+        System.out.print(a + " ");
 
-        System.out.println(a + " " + b + " " + c);
+        if((a / 10) % 10 == 1 || a % 10 >= 5 || a % 10 == 0) {
+            System.out.println("TORTOV");
+        } else if(a % 10 == 1) {
+            System.out.println("TORT");
+        } else {
+            System.out.println("TORTA");
+        }
 
     }
 
