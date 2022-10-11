@@ -10,11 +10,22 @@ public class Main {
         int a = scanner.nextInt(), b = scanner.nextInt(), c = scanner.nextInt();
 
         if(a > b) {
-            System.out.println(a > c ? a : c);
-        } else {
-            System.out.println(b > c ? b : c);
+            int t = a;
+            a = b;
+            b = t;
+        }
+        if(a > c) {
+            int t = a;
+            a = c;
+            c = t;
+        }
+        if(b > c) {
+            int t = b;
+            b = c;
+            c = t;
         }
 
+        System.out.println(a + " " + b + " " + c);
 
     }
 
