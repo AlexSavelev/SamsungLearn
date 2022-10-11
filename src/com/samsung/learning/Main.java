@@ -7,9 +7,11 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner (System.in);
 
-        int a = (scanner.nextInt() - 1) % 12;
+        int a = scanner.nextInt() - 1;
 
-        if(a % 2 == 0 && a <= 6) {
+        if(a < 0 || a > 11) {
+            System.out.println(0);
+        } else if(a % 2 == 0 && a <= 6) {
             System.out.println(31);
         } else if(a == 1) {
             System.out.println(28);
