@@ -7,16 +7,21 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner (System.in);
 
-        int n = scanner.nextInt();
+        int a = scanner.nextInt(), b = scanner.nextInt();
+        int c = scanner.nextInt(), d = scanner.nextInt();
 
-        int i = 0;
-        int t = 2;
-        while(i < n) {
-            System.out.print(t + " ");
-            t += 2;
+        boolean f = true;
+        int i = 10000;
+        while(i < 99999) {
+            if(i % a == b && i % c == d) {
+                f = false;
+                System.out.print(i + " ");
+            }
             ++i;
         }
 
+        if(f)
+            System.out.println(-1);
 
     }
 
