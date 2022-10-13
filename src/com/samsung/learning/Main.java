@@ -8,12 +8,12 @@ public class Main {
         Scanner scanner = new Scanner (System.in);
 
         int a = scanner.nextInt();
-        int r = 0;
+        int s = 1;
+        int r = 1;
 
-        int i = 26;
-        while(i <= a) {
-            r += i;
-            i += 2;
+        while(a / s > 9) {
+            s *= 10;
+            ++r;
         }
         System.out.println(r);
 
