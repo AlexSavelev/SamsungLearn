@@ -7,10 +7,11 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner (System.in);
 
-        int r = 1;
+        int r = 0;
         int a = scanner.nextInt();
-        while(a >= 0) {
-            ++r;
+        while(a / 10 != 0 && a / 100 == 0) {
+            r += a % 10;
+            r += (a / 10) % 10;
             a = scanner.nextInt();
         }
 
