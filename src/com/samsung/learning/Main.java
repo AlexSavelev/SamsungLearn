@@ -7,24 +7,21 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner (System.in);
 
-        int a = scanner.nextInt();
+        int n = scanner.nextInt();
         boolean flag = true;
-        int r = a + 1;
 
-        while(true) {
-            int i = 2;
-            while(i < r / 2) {
-                if(r % i++ == 0) {
-                    flag = false;
-                    break;
-                }
-            }
-            if(flag)
+        int i = 0;
+        while(i < n) {
+            int a = scanner.nextInt();
+            if(a < 437) {
+                flag = false;
+                System.out.println("Crash " + (i + 1));
                 break;
-            flag = true;
-            ++r;
+            }
+            ++i;
         }
-        System.out.println(r);
+        if(flag)
+            System.out.println("No crash");
 
     }
 
