@@ -8,16 +8,16 @@ public class Main {
         Scanner scanner = new Scanner (System.in);
 
         int a = scanner.nextInt();
+        boolean f = a % 2 != 0 || a == 2;
 
-        boolean f = false;
-        while(a / 10 != 0) {
-            if(a % 10 == (a / 10) % 10) {
-                f = true;
-                break;
+        int i = 3;
+        while(i < a / 2 && f) {
+            if(a % i == 0) {
+                f = false;
             }
-            a /= 10;
+            i += 2;
         }
-        System.out.println(f ? "YES" : "NO");
+        System.out.println(f ? "prime" : "composite");
 
 
     }
