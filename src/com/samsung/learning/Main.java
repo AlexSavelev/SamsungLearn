@@ -7,14 +7,13 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner (System.in);
 
-        int r = 1;
-        int a = scanner.nextInt();
-        while(a >= 0) {
+        int r = 0;
+        int a = scanner.nextInt(), b = scanner.nextInt();
+        while(a >= b) {
             ++r;
-            a = scanner.nextInt();
+            a -= b;
         }
-
-        System.out.println(r);
+        System.out.println(r + " " + a);
     }
 
 }
