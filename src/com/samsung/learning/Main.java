@@ -10,9 +10,9 @@ public class Main {
         int a = scanner.nextInt();
         int r = -1;
 
-        while(a != 0 && r == -1) {
-            if((a % 10) % 2 == 1)
-                r = a % 10;
+        while(a != 0) {
+            if(a % 10 != 0)
+                r = r == -1 ? a % 10 : Math.min(r, a % 10);
             a /= 10;
         }
         System.out.println(r != -1 ? r : "NO");
