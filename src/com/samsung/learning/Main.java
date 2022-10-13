@@ -9,12 +9,15 @@ public class Main {
 
         int a = scanner.nextInt();
 
-        int r = 0;
-        while(a != 0) {
-            r += a % 10;
+        boolean f = false;
+        while(a / 10 != 0) {
+            if(a % 10 == (a / 10) % 10) {
+                f = true;
+                break;
+            }
             a /= 10;
         }
-        System.out.println(r);
+        System.out.println(f ? "YES" : "NO");
 
 
     }
