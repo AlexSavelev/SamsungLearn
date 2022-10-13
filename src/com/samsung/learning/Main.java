@@ -8,14 +8,14 @@ public class Main {
         Scanner scanner = new Scanner (System.in);
 
         int a = scanner.nextInt();
-        int s = 1;
-        int r = 1;
+        int r = -1;
 
-        while(a / s > 9) {
-            s *= 10;
-            ++r;
+        while(a != 0 && r == -1) {
+            if((a % 10) % 2 == 1)
+                r = a % 10;
+            a /= 10;
         }
-        System.out.println(r);
+        System.out.println(r != -1 ? r : "NO");
 
     }
 
