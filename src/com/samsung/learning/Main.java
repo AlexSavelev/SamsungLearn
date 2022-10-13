@@ -8,14 +8,23 @@ public class Main {
         Scanner scanner = new Scanner (System.in);
 
         int a = scanner.nextInt();
-        int r = -1;
+        boolean flag = true;
+        int r = a + 1;
 
-        while(a != 0) {
-            if(a % 10 != 0)
-                r = r == -1 ? a % 10 : Math.min(r, a % 10);
-            a /= 10;
+        while(true) {
+            int i = 2;
+            while(i < r / 2) {
+                if(r % i++ == 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            if(flag)
+                break;
+            flag = true;
+            ++r;
         }
-        System.out.println(r != -1 ? r : "NO");
+        System.out.println(r);
 
     }
 
