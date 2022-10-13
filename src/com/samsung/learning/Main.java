@@ -7,21 +7,23 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner (System.in);
 
-        int n = scanner.nextInt();
-        boolean flag = true;
+        int a = scanner.nextInt(), b = scanner.nextInt();
 
-        int i = 0;
-        while(i < n) {
-            int a = scanner.nextInt();
-            if(a <= 437) {
-                flag = false;
-                System.out.println("Crash " + (i + 1));
-                break;
+        boolean setMinus = (a >= 0 || b >= 0) && (a <= 0 || b <= 0);
+
+        if(a == 0 || b == 0) {
+            System.out.println(0);
+        } else {
+            a = a > 0 ? a : -a;
+            int t = a;
+            b = b > 0 ? b : -b;
+            while(b > 1) {
+                a += t;
+                --b;
             }
-            ++i;
+            System.out.println((setMinus ? "-" : "") + a);
         }
-        if(flag)
-            System.out.println("No crash");
+
 
     }
 
