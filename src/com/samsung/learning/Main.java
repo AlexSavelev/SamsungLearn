@@ -9,10 +9,11 @@ public class Main {
 
         int a = scanner.nextInt();
         int r = 0;
-        int s = 1;
-        while(a > s - 1) {
-            ++r;
-            s *= 2;
+
+        int i = 26;
+        while(i <= a) {
+            r += i;
+            i += 2;
         }
         System.out.println(r);
 
