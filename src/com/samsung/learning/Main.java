@@ -9,13 +9,11 @@ public class Main {
 
         int r = 0;
         int a = scanner.nextInt();
-        while(a % 5 != 0) {
-            if(a > 10)
-                r += a;
+        while(a / 10 != 0 && a / 100 == 0) {
+            r += a % 10;
+            r += (a / 10) % 10;
             a = scanner.nextInt();
         }
-        if(a > 10)
-            r += a;
 
         System.out.println(r);
 
