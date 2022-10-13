@@ -7,13 +7,15 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner (System.in);
 
+        int a = scanner.nextInt();
         int r = 0;
-        int a = scanner.nextInt(), b = scanner.nextInt();
-        while(a >= b) {
+        int s = 1;
+        while(a > s - 1) {
             ++r;
-            a -= b;
+            s *= 2;
         }
-        System.out.println(r + " " + a);
+        System.out.println(r);
+
     }
 
 }
