@@ -13,7 +13,7 @@ public class Main {
         int i = 0;
         while(i < n) {
             int a = scanner.nextInt();
-            if(a < 437) {
+            if(a <= 437) {
                 flag = false;
                 System.out.println("Crash " + (i + 1));
                 break;
