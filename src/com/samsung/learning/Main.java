@@ -8,27 +8,11 @@ public class Main {
         Scanner scanner = new Scanner (System.in);
 
         int n = scanner.nextInt();
-        int a[] = new int[n];
-        for(int i = 0; i < n; ++i)
-            a[i] = scanner.nextInt();
-
-        int index = 0;
-        for(; index < n; ++index) {
-            if(a[index] > 0) break;
+        while(n > 1) {
+            System.out.print(n % 2);
+            n /= 2;
         }
-
-        for(int i = index; i < n; ++i) {
-            if(a[i] >= 0)
-                continue;
-            int t = a[i];
-            for(int j = i - 1; j >= index; --j) {
-                a[j + 1] = a[j];
-            }
-            a[index++] = t;
-        }
-
-        for(int i: a)
-            System.out.print(i + " ");
+        System.out.println(n);
 
     }
 
