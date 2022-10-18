@@ -10,12 +10,10 @@ public class Main {
         int n = scanner.nextInt();
 
         int t = 1;
-        System.out.print(t + " ");
-
-        for(int i = 1; i < n; ++i) {
-            t += n + 1;
-            System.out.print(t + " ");
+        for(int i = 1; i <= n; ++i) {
+            t *= i;
         }
+        System.out.println(t);
 
     }
 
