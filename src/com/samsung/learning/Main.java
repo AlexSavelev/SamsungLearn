@@ -12,10 +12,12 @@ public class Main {
         for(int i = 0; i < n; ++i)
             arr[i] = scanner.nextInt();
 
+        int r = 0;
         for(int i = 0; i < n; ++i) {
-            if(arr[i] % 2 == 0)
-                System.out.print(arr[i] + " ");
+            if(arr[i] > 0)
+                ++r;
         }
+        System.out.println(r);
 
     }
 
