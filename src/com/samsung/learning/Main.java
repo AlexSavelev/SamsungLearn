@@ -9,10 +9,14 @@ public class Main {
 
         int n = scanner.nextInt();
         int a[] = new int[n];
+        for(int i = 0; i < n; ++i)
+            a[i] = scanner.nextInt();
 
-        a[0] = 4;
-        for(int i = 1; i < n; ++i)
-            a[i] = a[i - 1] + 3;
+        for(int i = 0; i < n / 2; ++i) {
+            int t = a[i];
+            a[i] = a[n - i - 1];
+            a[n - i - 1] = t;
+        }
 
         for(int i: a)
             System.out.print(i + " ");
