@@ -8,11 +8,16 @@ public class Main {
         Scanner scanner = new Scanner (System.in);
 
         int n = scanner.nextInt();
-        while(n > 1) {
-            System.out.print(n % 2);
-            n /= 2;
+        boolean a[] = new boolean[n];
+        for(int i = 0; i < n - 1; ++i)
+            a[scanner.nextInt() - 1] = true;
+
+        for(int i = 0; i < n; ++i) {
+            if(!a[i]) {
+                System.out.println(i + 1);
+                break;
+            }
         }
-        System.out.println(n);
 
     }
 
