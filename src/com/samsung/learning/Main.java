@@ -12,10 +12,25 @@ public class Main {
         for(int i = 0; i < n; ++i)
             arr[i] = scanner.nextInt();
 
-        int r = arr[0];
-        for(int i = 1; i < n; ++i) {
-            if(arr[i] > r)
-                r = arr[i];
+        int r = 0;
+        while(arr.length != 0) {
+            int t = arr[0];
+
+            int newN = 0;
+            for(int i: arr) {
+                if(t != i)
+                    ++newN;
+            }
+
+            int newArr[] = new int[newN];
+            int k = 0;
+            for(int i: arr) {
+                if(t != i)
+                    newArr[k++] = i;
+            }
+
+            arr = newArr;
+            ++r;
         }
         System.out.println(r);
 
