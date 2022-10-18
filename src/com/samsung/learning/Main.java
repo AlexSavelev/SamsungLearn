@@ -8,15 +8,13 @@ public class Main {
         Scanner scanner = new Scanner (System.in);
 
         int n = scanner.nextInt();
-        boolean a[] = new boolean[n];
-        for(int i = 0; i < n - 1; ++i)
-            a[scanner.nextInt() - 1] = true;
 
-        for(int i = 0; i < n; ++i) {
-            if(!a[i]) {
-                System.out.println(i + 1);
-                break;
-            }
+        int t = 1;
+        System.out.print(t + " ");
+
+        for(int i = 1; i < n; ++i) {
+            t += n + 1;
+            System.out.print(t + " ");
         }
 
     }
