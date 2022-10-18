@@ -7,22 +7,18 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner (System.in);
 
-        int n = scanner.nextInt();
-        int a[] = new int[n];
-        for(int i = 0; i < n; ++i)
-            a[i] = scanner.nextInt();
-
-        int find = scanner.nextInt();
+        int r = 0;
         boolean flag = true;
+
+        int n = scanner.nextInt();
         for(int i = 0; i < n; ++i) {
-            if(a[i] == find) {
+            int t = scanner.nextInt();
+            if(t % 2 == 0) {
                 flag = false;
-                System.out.println(i + 1);
-                break;
+                r += t;
             }
         }
-        if(flag)
-            System.out.println("NO");
+        System.out.println((flag ? "NO" : r));
 
     }
 
