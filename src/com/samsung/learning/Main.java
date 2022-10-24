@@ -24,6 +24,8 @@ public class Main {
             for(int j = 0; j < m; ++j)
                 b[j][n - 1 - i] = a[i][j];
         }
+        System.out.print(m + " ");
+        System.out.println(n);
         printMatrix(b);
 
     }
