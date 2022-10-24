@@ -3,30 +3,27 @@ package com.samsung.learning;
 import java.util.Scanner;
 
 public class Main {
-    public static int sumOfDigits(int n) {
-        int t = 0;
-        while(n != 0) {
-            t += n % 10;
-            n /= 10;
+    public static double avgOf4Digit(int n[]) {
+        long t = 0L, cnt = 0;
+        for(int i: n) {
+            if(i / 1000 != 0 && i / 10000 == 0) {
+                ++cnt;
+                t += i;
+            }
         }
-        return t;
-    }
-    public static void binFraction(double x, int n) {
-        for(int i = 0; i < n; ++i) {
-            x *= 2;
-            System.out.print((int)x);
-            if((int)x == 1)
-                x -= 1;
-        }
+        if(cnt == 0)
+            return -1.0;
+        return t / (double)cnt;
     }
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner (System.in);
 
-        double x = scanner.nextDouble();
-        int a = scanner.nextInt();
-
-        binFraction(x, a);
+        int n = scanner.nextInt();
+        int a[] = new int[n];
+        for(int i = 0; i < n; ++i)
+            a[i] = scanner.nextInt();
+        System.out.println(avgOf4Digit(a));
 
     }
 
