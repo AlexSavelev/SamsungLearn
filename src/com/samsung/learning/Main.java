@@ -3,16 +3,28 @@ package com.samsung.learning;
 import java.util.Scanner;
 
 public class Main {
-    public static int minOf2(int a, int b) {
-        return (a < b) ? a : b;
-    }
-    public static int min(int a, int b, int c, int d) {
-        return minOf2(minOf2(a, b), minOf2(c, d));
+    public static void printMatrix(int a[][]) {
+        for(int t[]: a) {
+            for(int i: t)
+                System.out.print(i + " ");
+            System.out.println();
+        }
     }
     public static void main(String[] args) {
         Scanner scanner = new Scanner (System.in);
+        int n = scanner.nextInt(), m = scanner.nextInt();
+        int a[][] = new int[n][m];
+        for(int i = 0; i < n; ++i) {
+            for(int j = 0; j < m; ++j)
+                a[i][j] = scanner.nextInt();
+        }
 
-        System.out.println(trianglePerimetr(-15809, 20304, 18912, -10503, 10020, 22779));
+        int b[][] = new int[m][n];
+        for(int i = 0; i < n; ++i) {
+            for(int j = 0; j < m; ++j)
+                b[j][n - 1 - i] = a[i][j];
+        }
+        printMatrix(b);
 
     }
 
