@@ -11,24 +11,17 @@ public class Main {
         }
     }
     public static void main(String[] args) {
+        int [][] a;
+
         Scanner scanner = new Scanner (System.in);
-        int n = scanner.nextInt();
-        int a[][] = new int[n][n];
-        for(int i = 0; i < n; ++i) {
-            for(int j = 0; j < n; ++j)
-                a[i][j] = scanner.nextInt();
+        int n = scanner.nextInt(), m = scanner.nextInt();
+        a = new int[n][m];
+
+        for(int i = 0; i < n * m; ++i) {
+            a[i / m][i % m] = (i / m) * (i % m);
         }
 
-        boolean flag = true;
-        for(int i = 0; i < n && flag; ++i) {
-            for(int j = 0; j < n && flag; ++j) {
-                if(i == j)
-                    continue;
-                if(a[i][j] != a[j][i])
-                    flag = false;
-            }
-        }
-        System.out.println(flag ? "yes" : "no");
+        printMatrix(a);
     }
 
 }
