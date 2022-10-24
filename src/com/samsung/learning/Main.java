@@ -14,20 +14,21 @@ public class Main {
         Scanner scanner = new Scanner (System.in);
         int n = scanner.nextInt();
         int a[][] = new int[n][n];
-
         for(int i = 0; i < n; ++i) {
-            for(int j = 0; j < n; ++j) {
-                if(n - 1 - i == j)
-                    a[i][j] = 1;
-                else if(n - 1 - i > j)
-                    a[i][j] = 0;
-                else
-                    a[i][j] = 2;
-            }
+            for(int j = 0; j < n; ++j)
+                a[i][j] = scanner.nextInt();
         }
 
-        printMatrix(a);
-
+        boolean flag = true;
+        for(int i = 0; i < n && flag; ++i) {
+            for(int j = 0; j < n && flag; ++j) {
+                if(i == j)
+                    continue;
+                if(a[i][j] != a[j][i])
+                    flag = false;
+            }
+        }
+        System.out.println(flag ? "yes" : "no");
     }
 
 }
