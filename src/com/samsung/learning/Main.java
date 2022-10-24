@@ -11,21 +11,22 @@ public class Main {
         }
         return t;
     }
-    public static int sumOfThirteen(int a) {
-        int t = 0;
-        for(int i = 0; i < a; ++i) {
-            if(sumOfDigits(i) % 13 == 0)
-                ++t;
+    public static void binFraction(double x, int n) {
+        for(int i = 0; i < n; ++i) {
+            x *= 2;
+            System.out.print((int)x);
+            if((int)x == 1)
+                x -= 1;
         }
-        return t;
     }
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner (System.in);
 
+        double x = scanner.nextDouble();
         int a = scanner.nextInt();
 
-        System.out.println(sumOfThirteen(a));
+        binFraction(x, a);
 
     }
 
