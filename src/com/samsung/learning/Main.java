@@ -12,21 +12,21 @@ public class Main {
     }
     public static void main(String[] args) {
         Scanner scanner = new Scanner (System.in);
-        int n = scanner.nextInt(), m = scanner.nextInt();
-        int a[][] = new int[n][m];
+        int n = scanner.nextInt();
+        int a[][] = new int[n][n];
+
         for(int i = 0; i < n; ++i) {
-            for(int j = 0; j < m; ++j)
-                a[i][j] = scanner.nextInt();
+            for(int j = 0; j < n; ++j) {
+                if(n - 1 - i == j)
+                    a[i][j] = 1;
+                else if(n - 1 - i > j)
+                    a[i][j] = 0;
+                else
+                    a[i][j] = 2;
+            }
         }
 
-        int b[][] = new int[m][n];
-        for(int i = 0; i < n; ++i) {
-            for(int j = 0; j < m; ++j)
-                b[j][n - 1 - i] = a[i][j];
-        }
-        System.out.print(m + " ");
-        System.out.println(n);
-        printMatrix(b);
+        printMatrix(a);
 
     }
 
