@@ -3,19 +3,21 @@ package com.samsung.learning;
 import java.util.Scanner;
 
 public class Main {
+    public static int sumOfDigits(int n) {
+        int t = 0;
+        while(n != 0) {
+            t += n % 10;
+            n /= 10;
+        }
+        return t;
+    }
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner (System.in);
 
-        int r = 0;
-        int a = scanner.nextInt();
-        while(a / 10 != 0 && a / 100 == 0) {
-            r += a % 10;
-            r += (a / 10) % 10;
-            a = scanner.nextInt();
-        }
+        int t = scanner.nextInt();
 
-        System.out.println(r);
+        System.out.println(sumOfDigits(t));
 
     }
 
