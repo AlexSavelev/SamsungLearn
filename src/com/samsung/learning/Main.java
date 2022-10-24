@@ -3,17 +3,16 @@ package com.samsung.learning;
 import java.util.Scanner;
 
 public class Main {
-    public static double avgOf4Digit(int n[]) {
-        long t = 0L, cnt = 0;
-        for(int i: n) {
-            if(i / 1000 != 0 && i / 10000 == 0) {
-                ++cnt;
-                t += i;
-            }
+    public static void minToBegin(int n[]) {
+        int index = 0;
+        for(int i = 0; i < n.length; ++i) {
+            if(n[i] < n[index])
+                index = i;
         }
-        if(cnt == 0)
-            return -1.0;
-        return t / (double)cnt;
+        int el = n[index];
+        for(int i = index - 1; i >= 0; --i)
+            n[i + 1] = n[i];
+        n[0] = el;
     }
 
     public static void main(String[] args) {
@@ -23,7 +22,10 @@ public class Main {
         int a[] = new int[n];
         for(int i = 0; i < n; ++i)
             a[i] = scanner.nextInt();
-        System.out.println(avgOf4Digit(a));
+        minToBegin(a);
+        for(int i: a) {
+            System.out.print(i + " ");
+        }
 
     }
 
