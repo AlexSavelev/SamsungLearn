@@ -1,21 +1,20 @@
 package com.samsung.learning;
 
-import java.util.Scanner;
-
 public class Main {
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner (System.in);
+        Pet p1 = new Pet("Tima", "Alexandr", "Cat");
+        Pet p2 = new Pet("Rex", "Angelika", "Dog");
 
-        int r = 0;
-        int a = scanner.nextInt();
-        while(a / 10 != 0 && a / 100 == 0) {
-            r += a % 10;
-            r += (a / 10) % 10;
-            a = scanner.nextInt();
+        System.out.println(p1);
+        System.out.println(p2);
+
+        p1.addVisit(1667928379);
+
+        System.out.println(p1.getLastVisit());
+        for(int i : p1.getVisits()) {
+            System.out.println(i);
         }
-
-        System.out.println(r);
 
     }
 
